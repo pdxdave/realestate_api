@@ -11,9 +11,9 @@ const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
         const {records} = await airtable.list()
         const properties = records.map((property) => {
             const {id} = property 
-            const {dwelling, images, sqft, bed, bath, price, city, state, description, firstname, lastname, phone, featured, newlisting, tagline} = property.fields
+            const {dwelling, address, images, sqft, bed, bath, price, city, state, description, firstname, lastname, phone, featured, newlisting, tagline} = property.fields
             const url = images[0].url 
-            return {dwelling, images, sqft, bed, bath, price, url, id, city, state, description, firstname, lastname, phone, featured, newlisting, tagline}
+            return {dwelling, address, images, sqft, bed, bath, price, url, id, city, state, description, firstname, lastname, phone, featured, newlisting, tagline}
         })
         return {
             headers: {
