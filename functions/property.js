@@ -2,8 +2,8 @@
 require('dotenv').config()
 const Airtable = require('airtable-node')
 
-const airtable = new Airtable({ apiKey: process.env.AIRTABLE_PERSONAL_ACCESS_TOKEN })
-  .base(process.env.AIRTABLE_BASE)
+const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
+  .base('appUNH2hZdkrLoucA')
   .table('realestate')
 
   exports.handler = async(event, context) => {
@@ -17,7 +17,7 @@ const airtable = new Airtable({ apiKey: process.env.AIRTABLE_PERSONAL_ACCESS_TOK
         })
         return {
             headers: {
-                'Access-Control-Allow-Origin' : '*'
+                'Access-Control-Allow-Origin' : '*',
             },
             statusCode: 200,
             body: JSON.stringify(properties)
