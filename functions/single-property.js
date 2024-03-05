@@ -1,4 +1,3 @@
-// http://localhost:8888/api/single-property?id=
 require('dotenv').config()
 const Airtable = require('airtable-node');
  
